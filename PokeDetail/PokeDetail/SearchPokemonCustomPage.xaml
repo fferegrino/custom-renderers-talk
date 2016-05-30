@@ -13,5 +13,6 @@
     <controls:PkmnLabel x:Name="pokemonDescriptionLabel"  HorizontalTextAlignment="Center"/>
     <controls:PkmnLabel x:Name="pokemonHabitatLabel" HorizontalTextAlignment="Center"/>
     <controls:PkmnButton x:Name="loadMoreInfoButton" Margin="5" Text="Load more data" IsVisible="true"/>
+    <controls:PkmnShape x:Name="pkmnShape" WidthRequest="100"  HeightRequest="100"/>
   </StackLayout>
 </ContentPage>

@@ -45,6 +45,7 @@
     <Compile Include="SearchPokemonCustomPage.xaml.cs">
       <DependentUpon>SearchPokemonCustomPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\PkmnShape.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

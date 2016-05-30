@@ -95,6 +95,8 @@
     <ITunesArtwork Include="iTunesArtwork" />
     <None Include="packages.config" />
     <ITunesArtwork Include="iTunesArtwork%402x" />
+    <Compile Include="Controls\PkmnShapeRenderer.cs" />
+    <Compile Include="Controls\UIPkmnShape.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PokeDetail\PokeDetail.csproj">
