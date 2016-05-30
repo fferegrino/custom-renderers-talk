@@ -12,6 +12,6 @@
     <controls:PkmnLabel x:Name="pokemonNameLabel" Text="Busca" FontSize="Large" HorizontalTextAlignment="Center" />
     <controls:PkmnLabel x:Name="pokemonDescriptionLabel"  HorizontalTextAlignment="Center"/>
     <controls:PkmnLabel x:Name="pokemonHabitatLabel" HorizontalTextAlignment="Center"/>
-    <Button x:Name="loadMoreInfoButton" Text="Load more data" IsVisible="true"/>
+    <controls:PkmnButton x:Name="loadMoreInfoButton" Margin="5" Text="Load more data" IsVisible="true"/>
   </StackLayout>
 </ContentPage>

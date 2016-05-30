@@ -14,6 +14,8 @@ namespace PokeDetail.UWP.Controls
 {
     public class PkmnLabelRenderer : LabelRenderer
     {
+        static readonly FontFamily PokemonGBFontFamily = new FontFamily("/Assets/PokemonGB.ttf#Pokemon GB");
+
         protected override void OnElementChanged(ElementChangedEventArgs<Label> e)
         {
             base.OnElementChanged(e);
@@ -27,8 +29,7 @@ namespace PokeDetail.UWP.Controls
 
         private void SetFont()
         {
-            FontFamily ff = new FontFamily("/Assets/PokemonGB.ttf#Pokemon GB");
-            Control.FontFamily = ff;
+            Control.FontFamily = PokemonGBFontFamily;
         }
     }
 }

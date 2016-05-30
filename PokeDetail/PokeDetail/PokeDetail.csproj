@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Controls\PkmnButton.cs" />
     <Compile Include="SearchPokemonSimplePage.xaml.cs">
       <DependentUpon>SearchPokemonSimplePage.xaml</DependentUpon>
     </Compile>
@@ -121,7 +122,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <Folder Include="Controls\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>
