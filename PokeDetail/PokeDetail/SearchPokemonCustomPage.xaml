@@ -3,15 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:PokeDetail.Controls"
              x:Class="PokeDetail.SearchPokemonCustomPage">
-<ContentPage.Padding>
+  <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness"
                 iOS="0, 20, 0, 0" />
   </ContentPage.Padding>
   <StackLayout>
     <SearchBar x:Name="searchBar" />
-    <controls:PkmnLabel x:Name="pokemonNameLabel" Text="Busca" HorizontalTextAlignment="Center" />
-    <Label x:Name="pokemonDescriptionLabel"  HorizontalTextAlignment="Center"/>
-    <Label x:Name="pokemonHabitatLabel" HorizontalTextAlignment="Center"/>
+    <controls:PkmnLabel x:Name="pokemonNameLabel" Text="Busca" FontSize="Large" HorizontalTextAlignment="Center" />
+    <controls:PkmnLabel x:Name="pokemonDescriptionLabel"  HorizontalTextAlignment="Center"/>
+    <controls:PkmnLabel x:Name="pokemonHabitatLabel" HorizontalTextAlignment="Center"/>
     <Button x:Name="loadMoreInfoButton" Text="Load more data" IsVisible="true"/>
   </StackLayout>
 </ContentPage>

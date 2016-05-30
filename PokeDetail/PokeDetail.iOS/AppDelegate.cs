@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 using Foundation;
@@ -25,6 +26,17 @@ namespace PokeDetail.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
+
+
+            foreach (string family in UIFont.FamilyNames)
+            {
+                Debug.WriteLine(" ");
+                Debug.WriteLine("FontFamily = " + family);
+                foreach (string name in UIFont.FontNamesForFamilyName(family))
+                {
+                    Debug.WriteLine(" Name = " + name);
+                }
+            }
             return base.FinishedLaunching(app, options);
         }
     }
