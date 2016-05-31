@@ -24,6 +24,7 @@ namespace PokeDetail.iOS.Controls
 				// Instantiate the native control and assign it to the Control property
 				var shape = new UIPkmnShape(new CGRect(0, 0, Element.WidthRequest, Element.HeightRequest))
 				{
+                        Shape = PokemonShape.Armor
 				};
 
 				SetNativeControl(shape);
