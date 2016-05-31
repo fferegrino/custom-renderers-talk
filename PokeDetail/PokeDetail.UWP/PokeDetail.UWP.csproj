@@ -101,6 +101,7 @@
     </Compile>
     <Compile Include="Controls\PkmnButtonRenderer.cs" />
     <Compile Include="Controls\PkmnLabelRenderer.cs" />
+    <Compile Include="Controls\PkmnShapeRenderer.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

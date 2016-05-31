@@ -11,7 +11,7 @@
     <SearchBar x:Name="PokemonSearchBar" />
     <controls:PkmnLabel x:Name="PokemonNameLabel" Text="Busca" FontSize="Large" HorizontalTextAlignment="Center" />
     <controls:PkmnLabel x:Name="PokemonDescriptionLabel"  HorizontalTextAlignment="Center"/>
-    <controls:PkmnShape x:Name="PkmnShape" WidthRequest="100" Shape="Quadruped" HeightRequest="100"/>
+    <controls:PkmnShape x:Name="PkmnShape" WidthRequest="200"  HeightRequest="200" Shape="None"/>
     <controls:PkmnButton x:Name="ClearInfoButton" Margin="5" Text="Clear" IsVisible="true"/>
   </StackLayout>
 </ContentPage>
