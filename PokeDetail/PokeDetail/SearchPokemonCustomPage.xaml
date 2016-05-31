@@ -8,11 +8,10 @@
                 iOS="0, 20, 0, 0" />
   </ContentPage.Padding>
   <StackLayout>
-    <SearchBar x:Name="searchBar" />
-    <controls:PkmnLabel x:Name="pokemonNameLabel" Text="Busca" FontSize="Large" HorizontalTextAlignment="Center" />
-    <controls:PkmnLabel x:Name="pokemonDescriptionLabel"  HorizontalTextAlignment="Center"/>
-    <controls:PkmnLabel x:Name="pokemonHabitatLabel" HorizontalTextAlignment="Center"/>
-    <controls:PkmnButton x:Name="loadMoreInfoButton" Margin="5" Text="Load more data" IsVisible="true"/>
-    <controls:PkmnShape x:Name="pkmnShape" WidthRequest="100"  HeightRequest="100"/>
+    <SearchBar x:Name="PokemonSearchBar" />
+    <controls:PkmnLabel x:Name="PokemonNameLabel" Text="Busca" FontSize="Large" HorizontalTextAlignment="Center" />
+    <controls:PkmnLabel x:Name="PokemonDescriptionLabel"  HorizontalTextAlignment="Center"/>
+    <controls:PkmnShape x:Name="PkmnShape" WidthRequest="100" Shape="Quadruped" HeightRequest="100"/>
+    <controls:PkmnButton x:Name="ClearInfoButton" Margin="5" Text="Clear" IsVisible="true"/>
   </StackLayout>
 </ContentPage>

@@ -7,10 +7,10 @@
                 iOS="0, 20, 0, 0" />
   </ContentPage.Padding>
   <StackLayout>
-    <SearchBar x:Name="searchBar" />
-    <Label x:Name="pokemonNameLabel" HorizontalTextAlignment="Center" />
-    <Label x:Name="pokemonDescriptionLabel"  HorizontalTextAlignment="Center"/>
-    <Label x:Name="pokemonHabitatLabel" HorizontalTextAlignment="Center"/>
-    <Button x:Name="loadMoreInfoButton" Text="Load more data" IsVisible="true"/>
+    <SearchBar x:Name="PokemonSearchBar" />
+    <Label x:Name="PokemonNameLabel" HorizontalTextAlignment="Center" />
+    <Label x:Name="PokemonDescriptionLabel"  HorizontalTextAlignment="Center"/>
+    <Label x:Name="PokemonShapeLabel" HorizontalTextAlignment="Center"/>
+    <Button x:Name="ClearInfoButton" Text="Clear" IsVisible="true"/>
   </StackLayout>
 </ContentPage>

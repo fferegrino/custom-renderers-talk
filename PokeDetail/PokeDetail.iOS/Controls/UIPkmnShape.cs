@@ -6,8 +6,9 @@ using CoreGraphics;
 namespace PokeDetail.iOS.Controls
 {
 
-    public enum PokemonShape
+    public enum UIPokemonShape
     {
+        None,
         Ball,
         Squiggle,
         Fish, 
@@ -38,16 +39,11 @@ namespace PokeDetail.iOS.Controls
 
 		private void SetDefaultProperties()
 		{
-//			MaxRating = 5;
-//			_rating = 0;
-//			_displayMode = StarRatingDisplayMode.Full;
-//			HalfStarThreshold = EdDefaultHalfstarThreshold;
-//			HorizontalMargin = 10;
 			BackgroundColor = UIColor.Clear;
 		}
 
-        private PokemonShape _shape;
-        public PokemonShape Shape
+        private UIPokemonShape _shape;
+        public UIPokemonShape Shape
         {
             get { return _shape; }
             set { _shape = value; SetNeedsDisplay(); }
@@ -55,23 +51,23 @@ namespace PokeDetail.iOS.Controls
 
 		public override void Draw (CGRect rect)
         {
-            if (_shape == PokemonShape.Ball)
+            if (_shape == UIPokemonShape.Ball)
                 DrawBodyOnly(rect);
-            else if (_shape == PokemonShape.Fish)
+            else if (_shape == UIPokemonShape.Fish)
                 DrawFish(rect);
-            else if (_shape == PokemonShape.Quadruped)
+            else if (_shape == UIPokemonShape.Quadruped)
                 DrawQuadruped(rect);
-            else if (_shape == PokemonShape.Squiggle)
+            else if (_shape == UIPokemonShape.Squiggle)
                 DrawSerpentine(rect);
-            else if (_shape == PokemonShape.Legs)
+            else if (_shape == UIPokemonShape.Legs)
                 DrawBodyAndLegs(rect);
-            else if (_shape == PokemonShape.Heads)
+            else if (_shape == UIPokemonShape.Heads)
                 DrawMultipleBodies(rect);
-            else if (_shape == PokemonShape.Tentacles)
+            else if (_shape == UIPokemonShape.Tentacles)
                 DrawTenctacle(rect);
-            else if (_shape == PokemonShape.Armor)
+            else if (_shape == UIPokemonShape.Armor)
                 DrawInsectoid(rect);
-            else if (_shape == PokemonShape.BugWings)
+            else if (_shape == UIPokemonShape.BugWings)
                 DrawFourWinged(rect);
             else
                 DrawNotImplemented(rect);

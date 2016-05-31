@@ -6,19 +6,20 @@ using System.Threading.Tasks;
 using Jirapi;
 using Jirapi.Resources;
 using Xamarin.Forms;
+using PokemonShape = PokeDetail.Controls.PokemonShape;
 
 namespace PokeDetail
 {
     public partial class SearchPokemonCustomPage : ContentPage
     {
+        private Random r = new Random();
         public SearchPokemonCustomPage()
         {
             InitializeComponent();
 
-            searchBar.SearchButtonPressed += SearchPokemonButtonPressed;
-            loadMoreInfoButton.Clicked += LoadMoreInfoButton_Clicked;
+            PokemonSearchBar.SearchButtonPressed += SearchPokemonButtonPressed;
+            ClearInfoButton.Clicked += ClearInfoButton_Clicked; ;
         }
-
 
         private Pokemon pokemon;
         private PokemonSpecies pokemonSpecies;
@@ -30,34 +31,70 @@ namespace PokeDetail
 
             try
             {
-                pokemon = await pc.Get<Pokemon>(searchBar.Text.ToLower());
+                pokemon = await pc.Get<Pokemon>(PokemonSearchBar.Text.ToLower());
                 if (pokemon != null)
                 {
-                    pokemonNameLabel.Text = pokemon.Name;
+                    PokemonNameLabel.Text = pokemon.Name;
                     pokemonSpecies = await pokemon.Species.GetResource(pc);
-                    pokemonDescriptionLabel.Text =
+                    PokemonDescriptionLabel.Text =
                         pokemonSpecies.FlavorTextEntries.First(desc => desc.Language.Name.Equals("en")).FlavorText;
-                    pokemonHabitatLabel.Text = pokemonSpecies.Habitat.Name;
-                    loadMoreInfoButton.IsVisible = true;
+                    PkmnShape.Shape = StringToShape(pokemonSpecies.Shape.Name);
+                    ClearInfoButton.IsVisible = true;
                 }
             }
-            catch
+            catch(Exception ett)
             {
                 // Jirapi throws an exception if it does not find the resource
-                pokemonNameLabel.Text = "NOT FOUND";
-                pokemonDescriptionLabel.Text = "";
-                pokemonHabitatLabel.Text = "";
-                loadMoreInfoButton.IsVisible = false;
+                PokemonNameLabel.Text = "NOT FOUND";
+                PokemonDescriptionLabel.Text = "";
+                PkmnShape.Shape = PokemonShape.None;
+                ClearInfoButton.IsVisible = false;
             }
             IsBusy = false;
         }
 
-        private void LoadMoreInfoButton_Clicked(object sender, EventArgs e)
+        private void ClearInfoButton_Clicked(object sender, EventArgs e)
         {
-            IsBusy = true;
-            var pc = new PokeClient();
+            PokemonNameLabel.Text = "";
+            PokemonDescriptionLabel.Text = "";
+            PkmnShape.Shape = PokemonShape.None;
+            ClearInfoButton.IsVisible = false;
+        }
 
-            IsBusy = false;
+        private PokemonShape StringToShape(string name)
+        {
+
+            switch (name)
+            {
+                case "ball":
+                    return PokemonShape.Ball;
+                case "squiggle":
+                    return PokemonShape.Squiggle;
+                case "fish":
+                    return PokemonShape.Fish;
+                case "arms":
+                    return PokemonShape.Arms;
+                case "blob":
+                    return PokemonShape.Blob;
+                case "upright":
+                    return PokemonShape.Upright;
+                case "legs":
+                    return PokemonShape.Legs;
+                case "quadruped":
+                    return PokemonShape.Quadruped;
+                case "wings":
+                    return PokemonShape.Wings;
+                case "tentacles":
+                    return PokemonShape.Tentacles;
+                case "heads":
+                    return PokemonShape.Heads;
+                case "humanoid":
+                    return PokemonShape.Humanoid;
+                case "bug-wings":
+                    return PokemonShape.BugWings;
+                default:
+                    return PokemonShape.None;
+            }
         }
     }
 }

@@ -15,49 +15,48 @@ namespace PokeDetail
         {
             InitializeComponent();
 
-            searchBar.SearchButtonPressed += SearchPokemonButtonPressed;
-            loadMoreInfoButton.Clicked += LoadMoreInfoButton_Clicked;
+            PokemonSearchBar.SearchButtonPressed += PokemonSearchPokemonButtonPressed;
+            ClearInfoButton.Clicked += ClearInfoButton_Clicked;
         }
-
 
         private Pokemon pokemon;
         private PokemonSpecies pokemonSpecies;
 
-        private async void SearchPokemonButtonPressed(object sender, EventArgs e)
+        private async void PokemonSearchPokemonButtonPressed(object sender, EventArgs e)
         {
             IsBusy = true;
             var pc = new PokeClient();
 
             try
             {
-                pokemon = await pc.Get<Pokemon>(searchBar.Text.ToLower());
+                pokemon = await pc.Get<Pokemon>(PokemonSearchBar.Text.ToLower());
                 if (pokemon != null)
                 {
-                    pokemonNameLabel.Text = pokemon.Name;
+                    PokemonNameLabel.Text = pokemon.Name;
                     pokemonSpecies = await pokemon.Species.GetResource(pc);
-                    pokemonDescriptionLabel.Text =
+                    PokemonDescriptionLabel.Text =
                         pokemonSpecies.FlavorTextEntries.First(desc => desc.Language.Name.Equals("en")).FlavorText;
-                    pokemonHabitatLabel.Text = pokemonSpecies.Habitat.Name;
-                    loadMoreInfoButton.IsVisible = true;
+                    PokemonShapeLabel.Text = "Shape: " + pokemonSpecies.Shape.Name;
+                    ClearInfoButton.IsVisible = true;
                 }
             }
             catch
             {
                 // Jirapi throws an exception if it does not find the resource
-                pokemonNameLabel.Text = "NOT FOUND";
-                pokemonDescriptionLabel.Text = "";
-                pokemonHabitatLabel.Text = "";
-                loadMoreInfoButton.IsVisible = false;
+                PokemonNameLabel.Text = "NOT FOUND";
+                PokemonDescriptionLabel.Text = "";
+                PokemonShapeLabel.Text = "";
+                ClearInfoButton.IsVisible = false;
             }
             IsBusy = false;
         }
 
-        private void LoadMoreInfoButton_Clicked(object sender, EventArgs e)
+        private void ClearInfoButton_Clicked(object sender, EventArgs e)
         {
-            IsBusy = true;
-            var pc = new PokeClient();
-
-            IsBusy = false;
+            PokemonNameLabel.Text = "";
+            PokemonDescriptionLabel.Text = "";
+            PokemonShapeLabel.Text = "";
+            ClearInfoButton.IsVisible = false;
         }
     }
 }
