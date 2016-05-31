@@ -49,49 +49,34 @@ namespace PokeDetail.iOS.Controls
             {
                 case PokemonShape.Ball:
                     return UIPokemonShape.Ball;
-                    break;
                 case PokemonShape.Squiggle:
                     return UIPokemonShape.Squiggle;
-                    break;
                 case PokemonShape.Fish:
                     return UIPokemonShape.Fish;
-                    break;
                 case PokemonShape.Arms:
                     return UIPokemonShape.Arms;
-                    break;
                 case PokemonShape.Blob:
                     return UIPokemonShape.Blob;
-                    break;
                 case PokemonShape.Upright:
                     return UIPokemonShape.Upright;
-                    break;
                 case PokemonShape.Legs:
                     return UIPokemonShape.Legs;
-                    break;
                 case PokemonShape.Quadruped:
                     return UIPokemonShape.Quadruped;
-                    break;
                 case PokemonShape.Wings:
                     return UIPokemonShape.Wings;
-                    break;
                 case PokemonShape.Tentacles:
                     return UIPokemonShape.Tentacles;
-                    break;
                 case PokemonShape.Heads:
                     return UIPokemonShape.Heads;
-                    break;
                 case PokemonShape.Humanoid:
                     return UIPokemonShape.Humanoid;
-                    break;
                 case PokemonShape.BugWings:
                     return UIPokemonShape.BugWings;
-                    break;
                 case PokemonShape.Armor:
                     return UIPokemonShape.Armor;
-                    break;
                 case PokemonShape.None:
                     return UIPokemonShape.None;
-                    break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(shape), shape, null);
             }
